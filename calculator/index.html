@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take-Home Pay Calculator | Umbrella Day Rate | TJL Contractors</title>
+<meta name="description" content="Work out your take-home pay through an umbrella company. Enter a day rate and see income tax, National Insurance and employer costs line by line, at 2026/27 rates.">
+<link rel="canonical" href="https://www.tjlcontractors.co.uk/calculator/">
+<meta property="og:title" content="Take-Home Pay Calculator | Umbrella Day Rate | TJL Contractors">
+<meta property="og:description" content="Work out your take-home pay through an umbrella company. Enter a day rate and see income tax, National Insurance and employer costs line by line, at 2026/27 rates.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tjlcontractors.co.uk/calculator/">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+<body>
+
+<!-- ===== Top bar ===== -->
+<div class="topbar">
+  <div class="container">
+    <div>Umbrella payroll, self-assessment &amp; contractor support</div>
+    <div class="links">
+      <span>📞 <a href="tel:+442080581928">020 8058 1928</a></span>
+      <a href="mailto:info@tjlcontractors.co.uk">✉ info@tjlcontractors.co.uk</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="brand" aria-label="TJL Contractors — home">
+      <img src="../images/tjl-logo.png" alt="TJL Contractors">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainnav">
+      <a href="../">Home</a>
+      <a href="../umbrella/">Umbrella</a>
+      <a href="../services/">Services</a>
+      <a href="../pricing/">Fees</a>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
+      <a href="../contact/" class="nav-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span>Take-Home Pay Calculator</nav>
+    <h1>Umbrella take-home calculator</h1>
+    <p>Enter your contract details to see what you would actually keep through an umbrella company — with employer costs, income tax and National Insurance shown line by line.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="calc-layout">
+
+      <div class="calc-panel">
+        <h2 style="font-size:1.3rem;margin-bottom:22px;">Your contract</h2>
+        <form id="calcForm" novalidate>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="dayRate">Day rate (£)</label>
+              <input type="number" id="dayRate" value="450" min="0" step="5" inputmode="decimal">
+              <div class="hint">What your agency bills for your day.</div>
+            </div>
+            <div class="field">
+              <label for="margin">Umbrella fee (£ per week)</label>
+              <input type="number" id="margin" value="25" min="0" step="1" inputmode="decimal">
+              <div class="hint">Deducted before payroll.</div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="days">Days per week</label>
+              <input type="number" id="days" value="5" min="1" max="7" step="0.5" inputmode="decimal">
+            </div>
+            <div class="field">
+              <label for="weeks">Weeks per year</label>
+              <input type="number" id="weeks" value="46" min="1" max="52" step="1" inputmode="numeric">
+              <div class="hint">Most contractors work 44–46 paid weeks.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="region">Where do you pay tax?</label>
+            <select id="region">
+              <option value="england">England, Wales or Northern Ireland</option>
+              <option value="scotland">Scotland</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="studentLoan">Student loan</label>
+              <select id="studentLoan">
+                <option value="">None</option>
+                <option value="plan1">Plan 1</option>
+                <option value="plan2">Plan 2</option>
+                <option value="plan4">Plan 4 (Scotland)</option>
+                <option value="plan5">Plan 5</option>
+                <option value="postgraduate">Postgraduate loan</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pension">Pension contribution (%)</label>
+              <input type="number" id="pension" value="0" min="0" max="100" step="1" inputmode="decimal">
+              <div class="hint">Salary sacrifice, taken before tax.</div>
+            </div>
+          </div>
+
+          <div class="field" style="display:flex;gap:12px;align-items:flex-start;">
+            <input type="checkbox" id="levy" style="width:auto;margin-top:6px;" checked>
+            <label for="levy" style="font-weight:500;margin:0;">
+              Include Apprenticeship Levy
+              <span class="hint" style="display:block;font-weight:400;">Umbrella employers with a pay bill over £3m pay the 0.5% levy, which reduces the amount available for pay.</span>
+            </label>
+          </div>
+
+        </form>
+        <p class="hint" style="margin-top:18px;">Figures are estimates for guidance only. They use 2026/27 rates and assume the standard Personal Allowance and tax code 1257L. Your actual pay depends on your tax code and circumstances.</p>
+      </div>
+
+      <aside class="calc-results" aria-live="polite">
+        <h3>Your estimated take-home</h3>
+        <div class="calc-total" id="takeHomeTotal">£0</div>
+        <div class="calc-total-label" id="takeHomePer">per year</div>
+
+        <div class="field-row" style="gap:10px;margin-bottom:24px;">
+          <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:.75rem;color:rgba(255,255,255,.6);">Monthly</div>
+            <div style="font-weight:600;font-size:1rem;" id="perMonth">£0</div>
+          </div>
+          <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:.75rem;color:rgba(255,255,255,.6);">Weekly</div>
+            <div style="font-weight:600;font-size:1rem;" id="perWeek">£0</div>
+          </div>
+        </div>
+
+        <div class="calc-bar" aria-hidden="true">
+          <i class="seg-takehome" id="barTakeHome"></i>
+          <i class="seg-tax" id="barTax"></i>
+          <i class="seg-ni" id="barNi"></i>
+          <i class="seg-fee" id="barFee"></i>
+        </div>
+        <div class="calc-legend mb-3">
+          <span><i class="seg-takehome"></i>Take-home</span>
+          <span><i class="seg-tax"></i>Income tax</span>
+          <span><i class="seg-ni"></i>National Insurance</span>
+          <span><i class="seg-fee"></i>Costs &amp; fees</span>
+        </div>
+
+        <div class="calc-breakdown">
+          <div class="calc-row"><span>Contract value</span><span id="rAssignment">£0</span></div>
+          <div class="calc-row deduct"><span>Umbrella fee</span><span id="rMargin">-£0</span></div>
+          <div class="calc-row deduct"><span>Employer's NI</span><span id="rErNi">-£0</span></div>
+          <div class="calc-row deduct"><span>Apprenticeship Levy</span><span id="rLevy">-£0</span></div>
+          <div class="calc-row"><span>Gross salary</span><span id="rGross">£0</span></div>
+          <div class="calc-row deduct"><span>Income tax</span><span id="rTax">-£0</span></div>
+          <div class="calc-row deduct"><span>Employee's NI</span><span id="rEeNi">-£0</span></div>
+          <div class="calc-row deduct" id="rowPension" hidden><span>Pension</span><span id="rPension">-£0</span></div>
+          <div class="calc-row deduct" id="rowSl" hidden><span>Student loan</span><span id="rSl">-£0</span></div>
+          <div class="calc-row"><span><strong style="color:#fff;">Take-home</strong></span><span id="rTakeHome">£0</span></div>
+        </div>
+
+        <div style="border-top:1px solid rgba(255,255,255,.11);padding-top:16px;">
+          <div class="calc-row" style="border:0;padding:0;">
+            <span>Retention rate</span>
+            <span id="rRetention">0%</span>
+          </div>
+        </div>
+
+        <a href="../contact/" class="btn btn-primary btn-block" style="margin-top:24px;">Get an exact quote</a>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="eyebrow">Understanding the numbers</span>
+      <h2 class="section-title">Why the contract value is not your take-home</h2>
+      <p class="section-sub">Two costs come out before you are paid, and they surprise people who are new to umbrella working.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card reveal">
+        <div class="card-icon">01</div>
+        <h3>Employer's National Insurance</h3>
+        <p>As your employer, the umbrella pays 15% National Insurance on your salary above the secondary threshold. That money comes out of the assignment value, not from a separate pot.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">02</div>
+        <h3>Apprenticeship Levy</h3>
+        <p>Employers with a pay bill over £3m pay a 0.5% levy. An umbrella employing many contractors exceeds that, so the cost forms part of the calculation.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon">03</div>
+        <h3>Umbrella margin</h3>
+        <p>The umbrella's own fee, deducted before payroll. This is the figure you should compare between providers — and the one to check is genuinely all-inclusive.</p>
+      </div>
+    </div>
+    <p class="text-center mt-4"><a href="../umbrella/" class="link-arrow">Read how umbrella payroll works</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap:50px; align-items:start;">
+      <div>
+        <span class="eyebrow">Common questions</span>
+        <h2 class="section-title">About the calculation</h2>
+        <p class="section-sub">What the figures do and do not account for.</p>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" type="button">Why is my take-home lower than 90% of my rate?</button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Because employer's National Insurance is 15% on salary above the threshold, and it is funded out of the assignment value before you are paid. Any provider quoting a 90% retention rate is either not accounting for that cost or is operating a scheme HMRC would take a dim view of.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Does this include holiday pay?</button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Holiday pay accrues at 12.07% of your earnings and is paid to you when you take leave, so it is part of your overall remuneration rather than an extra on top. The figure shown is your pay while working.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Why do I enter 46 weeks rather than 52?</button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Most contractors do not work 52 paid weeks a year once holidays, bank holidays and gaps between contracts are accounted for. Using a realistic number gives you a truer annual picture. Change it to see the difference.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button">Is this the same as my payslip?</button>
+          <div class="faq-a"><div class="faq-a-inner"><p>It should be close, assuming the standard tax code and that you have no other income. Your payslip is the authoritative figure — this is an estimate to help you plan and compare.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Want the exact number?</h2>
+      <p>Give us your contract details and we will confirm your take-home and our fee in writing — no obligation.</p>
+      <div class="actions">
+        <a href="../contact/" class="btn btn-primary">Get an exact quote</a>
+        <a href="../pricing/" class="btn btn-ghost-light">See our fees</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <span class="footer-logo-chip"><img src="../images/tjl-logo.png" alt="TJL Contractors"></span>
+      <p>With years of experience providing tax-efficient payroll solutions with UK contractors in mind — dealing with the repetitive, admin-heavy tasks so you can focus on your profession.</p>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="../about/">About Us</a></li>
+        <li><a href="../services/">Services</a></li>
+        <li><a href="../pricing/">Fees &amp; Pricing</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="../umbrella/">Umbrella Payroll</a></li>
+        <li><a href="../self-assessment/">Online Self-Assessment</a></li>
+        <li><a href="../how-to-file-for-self-assessment/">Filing Your Return</a></li>
+        <li><a href="../calculator/">Take-Home Calculator</a></li>
+        <li><a href="../ir35/">IR35 &amp; Compliance</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="tel:+442080581928">📞 020 8058 1928</a></li>
+        <li><a href="mailto:info@tjlcontractors.co.uk">✉ info@tjlcontractors.co.uk</a></li>
+        <li><a href="../refer-recruiter/">Refer a recruiter</a></li>
+        <li><a href="../refer-contractor/">Refer a contractor</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div>© <span data-year>2026</span> TJL Contractors Ltd. All rights reserved.</div>
+      <div>
+        <a href="../terms-conditions/">Terms &amp; Conditions</a> &nbsp;·&nbsp;
+        <a href="../privacy-policy/">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="../cookie-policy/">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+<script src="../js/tax.js"></script>
+<script src="../js/calculator.js"></script>
+
+</body>
+</html>
